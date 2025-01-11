@@ -1,20 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Pergunta 2</title>
+  <meta charset="UTF-8">
+  <title>Pergunta 2</title>
+  <!-- Link para o CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Pergunta 2</h1>
-    <p>Qual a capital da França?</p>
+  <div class="kahoot-container">
+    <!-- Título / Texto da Pergunta -->
+    <div class="question-header">
+      <h1>Qual a capital da França?</h1>
+    </div>
 
-    <form method="POST">
-        <input type="radio" name="resposta" value="1" required> Marselha<br>
-        <input type="radio" name="resposta" value="2"> Lyon<br>
-        <input type="radio" name="resposta" value="3"> Paris<br>
-        <input type="radio" name="resposta" value="4"> Bordeaux<br>
-        <br>
-        <button type="submit">Responder</button>
+    <!-- Form que envia a resposta -->
+    <form method="POST" class="answers-grid">
+      
+      <!-- Opção 1 (vermelha) -->
+      <input 
+        type="radio" 
+        id="option2-red" 
+        name="resposta" 
+        value="1" 
+        required
+      >
+      <label for="option2-red" class="answer-block red-block">
+        <div class="shape triangle"></div>
+        <span>Marselha</span>
+      </label>
+
+      <!-- Opção 2 (azul) -->
+      <input 
+        type="radio" 
+        id="option2-blue" 
+        name="resposta" 
+        value="2"
+      >
+      <label for="option2-blue" class="answer-block blue-block">
+        <div class="shape diamond"></div>
+        <span>Lyon</span>
+      </label>
+
+      <!-- Opção 3 (amarela) -->
+      <input 
+        type="radio" 
+        id="option2-yellow" 
+        name="resposta" 
+        value="3"
+      >
+      <label for="option2-yellow" class="answer-block yellow-block">
+        <div class="shape circle"></div>
+        <span>Paris</span>
+      </label>
+
+      <!-- Opção 4 (verde) -->
+      <input 
+        type="radio" 
+        id="option2-green" 
+        name="resposta" 
+        value="4"
+      >
+      <label for="option2-green" class="answer-block green-block">
+        <div class="shape square"></div>
+        <span>Bordeaux</span>
+      </label>
+
+      <button type="submit" class="btn-submit">Responder</button>
     </form>
+  </div>
 </body>
 </html>

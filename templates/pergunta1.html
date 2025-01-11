@@ -1,21 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Pergunta 1</title>
+  <meta charset="UTF-8">
+  <title>Pergunta 1</title>
+  <!-- Link para o CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Pergunta 1</h1>
-    <!-- Exemplo: "Qual a capital do Brasil?" -->
-    <p>Qual a capital da Bahia?</p>
+  <div class="kahoot-container">
+    <!-- Título / Texto da Pergunta -->
+    <div class="question-header">
+      <h1>Qual a capital do Brasil?</h1>
+    </div>
 
-    <form method="POST">
-        <input type="radio" name="resposta" value="1" required> Brasília<br>
-        <input type="radio" name="resposta" value="2"> São Paulo<br>
-        <input type="radio" name="resposta" value="3"> Rio de Janeiro<br>
-        <input type="radio" name="resposta" value="4"> Salvador<br>
-        <br>
-        <button type="submit">Responder</button>
+    <!-- Form que envia a resposta -->
+    <form method="POST" class="answers-grid">
+      
+      <!-- Opção 1 (vermelha) -->
+      <!-- O input vem primeiro, depois o label -->
+      <input 
+        type="radio" 
+        id="option1-red" 
+        name="resposta" 
+        value="1" 
+        required
+      >
+      <label for="option1-red" class="answer-block red-block">
+        <!-- Forma geométrica (triângulo) -->
+        <div class="shape triangle"></div>
+        <span>Brasília</span>
+      </label>
+
+      <!-- Opção 2 (azul) -->
+      <input 
+        type="radio" 
+        id="option1-blue" 
+        name="resposta" 
+        value="2"
+      >
+      <label for="option1-blue" class="answer-block blue-block">
+        <!-- Forma geométrica (losango) -->
+        <div class="shape diamond"></div>
+        <span>São Paulo</span>
+      </label>
+
+      <!-- Opção 3 (amarela) -->
+      <input 
+        type="radio" 
+        id="option1-yellow" 
+        name="resposta" 
+        value="3"
+      >
+      <label for="option1-yellow" class="answer-block yellow-block">
+        <!-- Forma geométrica (círculo) -->
+        <div class="shape circle"></div>
+        <span>Rio de Janeiro</span>
+      </label>
+
+      <!-- Opção 4 (verde) -->
+      <input 
+        type="radio" 
+        id="option1-green" 
+        name="resposta" 
+        value="4"
+      >
+      <label for="option1-green" class="answer-block green-block">
+        <!-- Forma geométrica (quadrado) -->
+        <div class="shape square"></div>
+        <span>Salvador</span>
+      </label>
+
+      <!-- Botão de enviar -->
+      <button type="submit" class="btn-submit">Responder</button>
     </form>
+  </div>
 </body>
 </html>
